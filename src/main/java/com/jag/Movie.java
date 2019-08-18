@@ -2,24 +2,28 @@ package com.jag;
 
 public class Movie {
 
-    private String _title;
-    private int _priceCode;
-
     public static final int  CHILDRENS = 2;
     public static final int  REGULAR = 0;
     public static final int  NEW_RELEASE = 1;
 
-    public Movie(String name, int priceCode) {
-        _title = name;
-        _priceCode = priceCode;
+    private String _title;
+    private Price _price;
+
+    public Movie(String title, Price price){
+        _title = title;
+        _price = price;
     }
 
     public String getTitle(){
         return _title;
     }
 
-    public int getPriceCode(){
-        return _priceCode;
+    public double amount(int daysRented) {
+        return _price.amount(daysRented);
+    }
+
+    public int renterPoints(int daysRented) {
+             return _price.renterPoints(daysRented);
     }
 
 }
